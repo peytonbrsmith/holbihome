@@ -11,13 +11,10 @@
 
     <Shell.ItemTemplate>
         <DataTemplate>
-            <Image
-                Source="{Binding FlyoutIcon}"
-                HorizontalOptions="Center"
-                WidthRequest="100"
-                HeightRequest="75"
-                Aspect="Center"
-                />
+            <Grid HeightRequest="100" WidthRequest="100">
+
+                <Image Source="{Binding FlyoutIcon}" HeightRequest="22" Margin="-25,0,0,0"/>
+            </Grid>
         </DataTemplate>
     </Shell.ItemTemplate>
 
@@ -43,8 +40,20 @@
     </FlyoutItem>
 
     <Shell.FlyoutFooter>
-        <VerticalStackLayout>
-            <Image
+        <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+            <ShellContent
+            Title="Account"
+            ContentTemplate="{DataTemplate local:AccountPage}"
+            Route="concepts" 
+                Icon="{StaticResource Profile}"/>
+            <ShellContent
+            Title="Application"
+            ContentTemplate="{DataTemplate local:AccountPage}"
+            Route="concepts" 
+                Icon="{StaticResource Settings}"/>
+        </FlyoutItem>
+        <!--<VerticalStackLayout>
+                <Image
                 Source="{StaticResource Profile}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -52,7 +61,7 @@
                 HeightRequest="75"
                 Aspect="Center"
                 />
-            <Image
+                <Image
                 Source="{StaticResource Settings}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
@@ -60,7 +69,7 @@
                 HeightRequest="75"
                 Aspect="Center"
                 />
-        </VerticalStackLayout>
+            </VerticalStackLayout>-->
     </Shell.FlyoutFooter>
 
 </Shell>

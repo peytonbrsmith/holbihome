@@ -66,8 +66,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\Card.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Pages\MainPage.xaml">
 	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\AccountPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Pages\ProjectsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
@@ -75,11 +81,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Controls\" />
-	  <Folder Include="Pages\" />
 	  <Folder Include="Views\" />
 	  <Folder Include="PageModels\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Models\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Controls\Card.xaml.cs">
+	    <DependentUpon>Card.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\AccountPage.xaml.cs">
+	    <DependentUpon>AccountPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 </Project>
