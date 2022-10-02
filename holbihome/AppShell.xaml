@@ -10,38 +10,34 @@
         <ImageButton Source="seahorse.png" HeightRequest="100" WidthRequest="50" BackgroundColor="Transparent"></ImageButton>
     </Shell.FlyoutHeader>
 
-    <!--<Shell.ItemTemplate>
+    <Shell.ItemTemplate>
         <DataTemplate>
-            <Grid HeightRequest="100" WidthRequest="100">
+            <Grid HeightRequest="100" WidthRequest="100" Padding="10">
 
-                <ImageButton
-                    InputTransparent="True" Source="{Binding FlyoutIcon}" HeightRequest="100" Aspect="Center" Margin="{OnPlatform WinUI='-25,0,0,0'}"/>
+                <Image Source="{Binding FlyoutIcon}" HeightRequest="100" Aspect="Center" Margin="{OnPlatform WinUI='-25,0,0,0'}"/>
+                <!--<VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                  Value="Transparent" />
+                                </VisualState.Setters>
+                                
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                    Value="{AppThemeBinding Light=Black, Dark=White}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>-->
             </Grid>
-            
-        </DataTemplate>
-    </Shell.ItemTemplate>-->
 
-    <Shell.FlyoutContent>
-        <CollectionView BindingContext="{x:Reference shell}"
-                        IsGrouped="True"
-                        ItemsSource="{Binding FlyoutItems}"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Start"
-                        SelectionMode="Single"
-                        >
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <ImageButton Source="{Binding FlyoutIcon}" HeightRequest="75" WidthRequest="75"  Aspect="Center"
-                                 CornerRadius="100">
-                        
-                    </ImageButton>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </Shell.FlyoutContent>
+        </DataTemplate>
+    </Shell.ItemTemplate>
 
     <FlyoutItem Title="Dashboard" FlyoutIcon="{StaticResource Dashboard}">
         <ShellContent
@@ -66,11 +62,11 @@
 
 
     <Shell.FlyoutFooter>
-        <VerticalStackLayout Spacing="10" Padding="0,10">
-            <ImageButton Source="{StaticResource Profile}" HeightRequest="75" WidthRequest="75"  Aspect="Center"
-                                 CornerRadius="100" />
-            <ImageButton Source="{StaticResource Settings}" HeightRequest="75" WidthRequest="75"  Aspect="Center"
-                                 CornerRadius="100" />
+        <VerticalStackLayout Spacing="10" >
+            <ImageButton Source="{StaticResource Profile}" HeightRequest="100" WidthRequest="100"  Aspect="Center"
+                                  />
+            <ImageButton Source="{StaticResource Settings}" HeightRequest="100" WidthRequest="100"  Aspect="Center"
+                                  />
         </VerticalStackLayout>
     </Shell.FlyoutFooter>
 
