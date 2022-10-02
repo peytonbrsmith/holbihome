@@ -4,10 +4,13 @@
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="holbihome.Controls.CardView">
     <Frame>
-        <Label
-                         Text="{Binding CardTitle}"
-                         FontAttributes="Bold"
-                         FontSize="18"
-                         HorizontalTextAlignment="Start" BackgroundColor="Yellow"/>
+        <VerticalStackLayout>
+            <Label
+            Text="{Binding CardTitle}"
+            TextColor="White"
+            FontAttributes="Bold"
+            FontSize="18"
+            HorizontalTextAlignment="Start" />
+        </VerticalStackLayout>
     </Frame>
 </ContentView>

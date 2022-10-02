@@ -10,47 +10,47 @@
     <FontImage x:Key="Dashboard"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.Home}"/>
     <FontImage x:Key="Projects"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.CodeBranch}"/>
     <FontImage x:Key="Concepts"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.FileArchive}"/>
     <FontImage x:Key="IconFour"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.DiceFour}"/>
     <FontImage x:Key="Settings"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.Cogs}"/>
     <FontImage x:Key="Profile"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.UserCircle}"/>
     <FontImage x:Key="Calendar"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.Calendar}"/>
     <FontImage x:Key="Scores"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.ChartBar}"/>
     <FontImage x:Key="Categories"
                FontFamily="FontAwesome"
                Size="22"
-               Color="{StaticResource Primary}"
+               Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.Folder}"/>
 
     <Style TargetType="ActivityIndicator">
@@ -176,6 +176,7 @@
     </Style>
 
     <Style TargetType="ImageButton">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="Opacity" Value="1" />
         <Setter Property="BorderColor" Value="Transparent"/>
         <Setter Property="BorderWidth" Value="0"/>
@@ -189,9 +190,24 @@
                             <Setter Property="Opacity" Value="0.5" />
                         </VisualState.Setters>
                     </VisualState>
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                                    Value="{StaticResource Primary}" />
+                        </VisualState.Setters>
+                    </VisualState>
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
+        <Style.Triggers>
+            <Trigger TargetType="ImageButton"
+                                     Property="ImageButton.IsPressed"
+                                     Value="True">
+                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource Primary}" />
+                <!-- Multiple Setter elements are allowed -->
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style TargetType="Label">

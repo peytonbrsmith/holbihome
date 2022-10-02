@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
+    x:Name="shell"
     x:Class="holbihome.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -9,15 +10,38 @@
         <ImageButton Source="seahorse.png" HeightRequest="100" WidthRequest="50" BackgroundColor="Transparent"></ImageButton>
     </Shell.FlyoutHeader>
 
-    <Shell.ItemTemplate>
+    <!--<Shell.ItemTemplate>
         <DataTemplate>
             <Grid HeightRequest="100" WidthRequest="100">
 
-                <Image Source="{Binding FlyoutIcon}" HeightRequest="22" Margin="{OnPlatform WinUI='-25,0,0,0'}"/>
+                <ImageButton
+                    InputTransparent="True" Source="{Binding FlyoutIcon}" HeightRequest="100" Aspect="Center" Margin="{OnPlatform WinUI='-25,0,0,0'}"/>
             </Grid>
             
         </DataTemplate>
-    </Shell.ItemTemplate>
+    </Shell.ItemTemplate>-->
+
+    <Shell.FlyoutContent>
+        <CollectionView BindingContext="{x:Reference shell}"
+                        IsGrouped="True"
+                        ItemsSource="{Binding FlyoutItems}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        SelectionMode="Single"
+                        >
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ImageButton Source="{Binding FlyoutIcon}" HeightRequest="75" WidthRequest="75"  Aspect="Center"
+                                 CornerRadius="100">
+                        
+                    </ImageButton>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Shell.FlyoutContent>
 
     <FlyoutItem Title="Dashboard" FlyoutIcon="{StaticResource Dashboard}">
         <ShellContent
@@ -40,28 +64,14 @@
             Route="concepts" />
     </FlyoutItem>
 
-    <MenuFlyoutItem Text="Test">
-    </MenuFlyoutItem>
 
     <Shell.FlyoutFooter>
-        <VerticalStackLayout>
-                <Image
-                Source="{StaticResource Profile}"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                WidthRequest="100"
-                HeightRequest="75"
-                Aspect="Center"
-                />
-                <Image
-                Source="{StaticResource Settings}"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                WidthRequest="100"
-                HeightRequest="75"
-                Aspect="Center"
-                />
-            </VerticalStackLayout>
+        <VerticalStackLayout Spacing="10" Padding="0,10">
+            <ImageButton Source="{StaticResource Profile}" HeightRequest="75" WidthRequest="75"  Aspect="Center"
+                                 CornerRadius="100" />
+            <ImageButton Source="{StaticResource Settings}" HeightRequest="75" WidthRequest="75"  Aspect="Center"
+                                 CornerRadius="100" />
+        </VerticalStackLayout>
     </Shell.FlyoutFooter>
 
 </Shell>
