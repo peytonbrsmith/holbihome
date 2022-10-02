@@ -3,47 +3,26 @@
     x:Class="holbihome.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:holbihome"
-    >
+    xmlns:local="clr-namespace:holbihome">
 
     <Shell.FlyoutHeader>
-        <ImageButton Source="seahorse.png" HeightRequest="100" WidthRequest="50" ></ImageButton>
+        <ImageButton Source="seahorse.png" HeightRequest="100" WidthRequest="50" BackgroundColor="Transparent"></ImageButton>
     </Shell.FlyoutHeader>
-
-    <Shell.FlyoutFooter>
-        <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" FlyoutIcon="{StaticResource Settings}" >
-            <Tab Title="Domestic"
-             FlyoutIcon="{StaticResource Concepts}">
-                <ShellContent Title="Cats"
-                          FlyoutIcon="{StaticResource Concepts}"
-                          ContentTemplate="{DataTemplate local:MainPage}" />
-                <ShellContent Title="Dogs"
-                          FlyoutIcon="{StaticResource Concepts}"
-                          ContentTemplate="{DataTemplate local:MainPage}" />
-            </Tab>
-            <ShellContent Title="Monkeys"
-                      FlyoutIcon="{StaticResource Concepts}"
-                      ContentTemplate="{DataTemplate local:MainPage}" />
-            <ShellContent Title="Elephants"
-                      FlyoutIcon="{StaticResource Concepts}"
-                      ContentTemplate="{DataTemplate local:MainPage}" />
-            <ShellContent Title="Bears"
-                      FlyoutIcon="{StaticResource Concepts}"
-                      ContentTemplate="{DataTemplate local:MainPage}" />
-        </FlyoutItem>
-    </Shell.FlyoutFooter>
-
-    <Shell.ItemTemplate>
+    
+    <!--<Shell.ItemTemplate>
         <DataTemplate>
-            <Grid Padding="0,20,0,20">
-
-                <ImageButton Source="{Binding FlyoutIcon}" Aspect="Center"></ImageButton>
-
-            </Grid>
+            <Image
+                Source="{Binding FlyoutIcon}" 
+                BackgroundColor="Blue"
+                HorizontalOptions="Center"
+                WidthRequest="100"
+                HeightRequest="100"
+                Aspect="Center"
+                />
         </DataTemplate>
-    </Shell.ItemTemplate>
+    </Shell.ItemTemplate>-->
 
-    <FlyoutItem Title="Dashboard" FlyoutIcon="{StaticResource Dashboard}" >
+    <FlyoutItem Title="Dashboard" FlyoutIcon="{StaticResource Dashboard}">
         <ShellContent
             Title="Dashboard"
             ContentTemplate="{DataTemplate local:MainPage}"
@@ -53,25 +32,23 @@
     <FlyoutItem Title="Projects" FlyoutIcon="{StaticResource Projects}">
         <ShellContent
             Title="Projects"
-            ContentTemplate="{DataTemplate local:MainPage}"
+            ContentTemplate="{DataTemplate local:ProjectsPage}"
             Route="projects" />
     </FlyoutItem>
 
     <FlyoutItem Title="Concepts" FlyoutIcon="{StaticResource Concepts}">
         <ShellContent
-            Title="Projects"
+            Title="Concepts"
             ContentTemplate="{DataTemplate local:MainPage}"
-            Route="projects" />
+            Route="concepts" />
     </FlyoutItem>
 
-
-
-    <!--<FlyoutItem Title="Flyout Four" FlyoutIcon="{StaticResource IconFour}">
-        <ShellContent
-            Title="Four"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="FourPage" />
-    </FlyoutItem>-->
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Padding="0,20">
+            <ImageButton Source="{StaticResource Profile}" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton Source="{StaticResource Settings}" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent"></ImageButton>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>
 

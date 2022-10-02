@@ -9,16 +9,19 @@
 
     <FontImage x:Key="Dashboard"
                FontFamily="FontAwesome"
-               Size="32"
+               Size="22"
+               Color="{StaticResource Primary}"
                Glyph="{x:Static local:IconFont.Home}"/>
     <FontImage x:Key="Projects"
                FontFamily="FontAwesome"
-               Size="32"
+               Size="22"
+               Color="{StaticResource Primary}"
                Glyph="{x:Static local:IconFont.CodeBranch}"/>
     <FontImage x:Key="Concepts"
                FontFamily="FontAwesome"
-               Size="32"
-               Glyph="{x:Static local:IconFont.File}"/>
+               Size="22"
+               Color="{StaticResource Primary}"
+               Glyph="{x:Static local:IconFont.FileArchive}"/>
     <FontImage x:Key="IconFour"
                FontFamily="FontAwesome"
                Size="22"
@@ -29,6 +32,26 @@
                Size="22"
                Color="{StaticResource Primary}"
                Glyph="{x:Static local:IconFont.Cogs}"/>
+    <FontImage x:Key="Profile"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Primary}"
+               Glyph="{x:Static local:IconFont.UserCircle}"/>
+    <FontImage x:Key="Calendar"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Primary}"
+               Glyph="{x:Static local:IconFont.Calendar}"/>
+    <FontImage x:Key="Scores"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Primary}"
+               Glyph="{x:Static local:IconFont.ChartBar}"/>
+    <FontImage x:Key="Categories"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Primary}"
+               Glyph="{x:Static local:IconFont.Folder}"/>
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
@@ -378,13 +401,13 @@
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray950}}" />
     </Style>
 
     <Style TargetType="Shell" ApplyToDerivedTypes="True">
         <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray950}}" />
         <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource White}}" />
-        <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
+        <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" />
         <Setter Property="Shell.NavBarHasShadow" Value="False" />
@@ -392,13 +415,14 @@
         <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
         <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
         <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
-        <Setter Property="Shell.FlyoutBackground" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray900}}" />
+        <!--<Setter Property="Shell.FlyoutBackdrop" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}" />-->
         <Setter Property="Shell.FlyoutBehavior" Value="Locked" />
-        <Setter Property="Shell.FlyoutWidth" Value="100" />
+        <Setter Property="Shell.FlyoutWidth" Value="200" />
+        <!--<Setter Property="Shell.Opacity" Value="0.5" />-->
     </Style>
 
     <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray900}}" />
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Black}}" />
         <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
         <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
     </Style>
