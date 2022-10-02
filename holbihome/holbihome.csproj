@@ -51,6 +51,12 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\fa_solid.ttf" />
 	  <None Remove="Resources\Images\seahorse.png" />
+	  <None Remove="Controls\" />
+	  <None Remove="Pages\" />
+	  <None Remove="Views\" />
+	  <None Remove="PageModels\" />
+	  <None Remove="ViewModels\" />
+	  <None Remove="Models\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -60,15 +66,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="ProjectsPage.xaml.cs">
-	    <DependentUpon>ProjectsPage.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="ProjectsPage.xaml">
+	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Pages\MainPage.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
+	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Pages\ProjectsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Controls\" />
+	  <Folder Include="Pages\" />
+	  <Folder Include="Views\" />
+	  <Folder Include="PageModels\" />
+	  <Folder Include="ViewModels\" />
+	  <Folder Include="Models\" />
+	</ItemGroup>
 </Project>

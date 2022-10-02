@@ -417,9 +417,13 @@
         <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
         <!--<Setter Property="Shell.FlyoutBackdrop" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}" />-->
         <Setter Property="Shell.FlyoutBehavior" Value="Locked" />
-        <Setter Property="Shell.FlyoutWidth" Value="200" />
+        <Setter Property="Shell.FlyoutWidth" Value="100" />
         <!--<Setter Property="Shell.Opacity" Value="0.5" />-->
     </Style>
+
+    <!--<Style TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray950}}" />
+    </Style>-->
 
     <Style TargetType="NavigationPage">
         <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Black}}" />
