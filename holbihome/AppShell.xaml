@@ -13,8 +13,9 @@
         <DataTemplate>
             <Grid HeightRequest="100" WidthRequest="100">
 
-                <Image Source="{Binding FlyoutIcon}" HeightRequest="22" Margin="-25,0,0,0"/>
+                <Image Source="{Binding FlyoutIcon}" HeightRequest="22" Margin="{OnPlatform WinUI='-25,0,0,0'}"/>
             </Grid>
+            
         </DataTemplate>
     </Shell.ItemTemplate>
 
@@ -39,20 +40,11 @@
             Route="concepts" />
     </FlyoutItem>
 
+    <MenuFlyoutItem Text="Test">
+    </MenuFlyoutItem>
+
     <Shell.FlyoutFooter>
-        <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-            <ShellContent
-            Title="Account"
-            ContentTemplate="{DataTemplate local:AccountPage}"
-            Route="concepts" 
-                Icon="{StaticResource Profile}"/>
-            <ShellContent
-            Title="Application"
-            ContentTemplate="{DataTemplate local:AccountPage}"
-            Route="concepts" 
-                Icon="{StaticResource Settings}"/>
-        </FlyoutItem>
-        <!--<VerticalStackLayout>
+        <VerticalStackLayout>
                 <Image
                 Source="{StaticResource Profile}"
                 HorizontalOptions="Center"
@@ -69,7 +61,7 @@
                 HeightRequest="75"
                 Aspect="Center"
                 />
-            </VerticalStackLayout>-->
+            </VerticalStackLayout>
     </Shell.FlyoutFooter>
 
 </Shell>
