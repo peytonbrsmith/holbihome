@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="holbihome.MainPage"
-             xmlns:controls="clr-namespace:holbihome.Controls">
+             xmlns:controls="clr-namespace:holbihome.Controls"
+             xmlns:local="clr-namespace:holbihome">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,95 +15,14 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!--<Frame Grid.Row="0" Grid.Column="0" Margin="25" CornerRadius="8" VerticalOptions="FillAndExpand">
+        <controls:CardView CardTitle="Current Projects" CardDescription="None, enjoy the silence." CardIcon="{x:Static local:IconFont.CodeBranch}"
+                           Grid.Row="0" Grid.Column="0" ></controls:CardView>
 
-            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+        <controls:CardView CardTitle="Calendar" CardDescription="No upcoming events." CardIcon="{x:Static local:IconFont.Calendar}"
+                           Grid.Row="1" Grid.Column="0" ></controls:CardView>
 
-                <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand" HeightRequest="25" Margin="20">
-                    <Image Source="{StaticResource Calendar}"/>
-                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Calendar</Label>
-                </HorizontalStackLayout>
-
-                <CollectionView VerticalOptions="FillAndExpand" >
-
-                    <CollectionView.EmptyView>
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-
-                            <Label HorizontalTextAlignment="Center" 
-                                   VerticalTextAlignment="Center" 
-                                   VerticalOptions="CenterAndExpand">
-
-                                No upcoming events
-
-                            </Label>
-
-                        </StackLayout>
-                    </CollectionView.EmptyView>
-
-                </CollectionView>
-
-            </VerticalStackLayout>
-        </Frame>-->
-        <controls:CardView CardTitle="Calendar" Grid.Row="0" Grid.Column="0" Margin="25" VerticalOptions="FillAndExpand"></controls:CardView>
-        <Frame Grid.Row="1" Grid.Column="0" Margin="25" CornerRadius="8" VerticalOptions="FillAndExpand">
-
-            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-
-                <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand" HeightRequest="25" Margin="20">
-                    <Image Source="{StaticResource Projects}"/>
-                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Current Projects</Label>
-                </HorizontalStackLayout>
-
-                <CollectionView VerticalOptions="FillAndExpand" >
-
-                    <CollectionView.EmptyView>
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-
-                            <Label HorizontalTextAlignment="Center" 
-                                   VerticalTextAlignment="Center" 
-                                   VerticalOptions="CenterAndExpand">
-
-                                No upcoming events
-
-                            </Label>
-
-                        </StackLayout>
-                    </CollectionView.EmptyView>
-
-                </CollectionView>
-
-            </VerticalStackLayout>
-        </Frame>
-        
-        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="25" CornerRadius="8" VerticalOptions="FillAndExpand">
-
-            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-
-                <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand" HeightRequest="25" Margin="20">
-                    <Image Source="{StaticResource Scores}"/>
-                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Scores</Label>
-                </HorizontalStackLayout>
-
-                <CollectionView VerticalOptions="FillAndExpand" >
-
-                    <CollectionView.EmptyView>
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-
-                            <Label HorizontalTextAlignment="Center" 
-                                   VerticalTextAlignment="Center" 
-                                   VerticalOptions="CenterAndExpand">
-
-                                No upcoming events
-
-                            </Label>
-
-                        </StackLayout>
-                    </CollectionView.EmptyView>
-
-                </CollectionView>
-
-            </VerticalStackLayout>
-        </Frame>
+        <controls:CardView CardTitle="Scores" CardDescription="No current scores." CardIcon="{x:Static local:IconFont.ChartBar}"
+                           Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"></controls:CardView>
 
     </Grid>
 
