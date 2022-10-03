@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\fa_solid.ttf" />
+	  <None Remove="Resources\Images\peyton.jpg" />
 	  <None Remove="Resources\Images\seahorse.png" />
 	  <None Remove="Controls\" />
 	  <None Remove="Pages\" />

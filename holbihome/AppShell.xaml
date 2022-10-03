@@ -10,6 +10,14 @@
         <ImageButton Source="seahorse.png" HeightRequest="100" WidthRequest="50" BackgroundColor="Transparent"></ImageButton>
     </Shell.FlyoutHeader>
 
+    <!--<Shell.TitleView>
+        <HorizontalStackLayout HeightRequest="100" BackgroundColor="Transparent">
+            <Label Text="{Binding FlyoutTitle}" BackgroundColor="White">
+                
+            </Label>
+        </HorizontalStackLayout>
+    </Shell.TitleView>-->
+
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid HeightRequest="100" WidthRequest="100" Padding="10">

@@ -3,10 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="holbihome.AccountPage"
              xmlns:controls="clr-namespace:holbihome.Controls"
-             xmlns:local="clr-namespace:holbihome">
+             xmlns:local="clr-namespace:holbihome"
+             Shell.NavBarIsVisible="false">
 
     <controls:CardView CardTitle="Account" CardIcon="{x:Static local:IconFont.UserCircle}"
-                           Grid.Row="0" Grid.Column="0" ></controls:CardView>
+                           Grid.Row="0" Grid.Column="0" >
+        <controls:CardView.CardContent>
+            <ContentView>
+                <VerticalStackLayout Spacing="10">
+                    <Border HeightRequest="300" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" 
+                            StrokeShape="RoundRectangle 500" StrokeThickness="4" Stroke="{StaticResource Primary}">
+                        <Image Source="peyton.jpg" Aspect="AspectFit">
+
+                        </Image>
+                    </Border>
+                </VerticalStackLayout>
+            </ContentView>
+        </controls:CardView.CardContent>
+    </controls:CardView>
 
 </ContentPage>
 

@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="holbihome.MainPage"
              xmlns:controls="clr-namespace:holbihome.Controls"
-             xmlns:local="clr-namespace:holbihome">
+             xmlns:local="clr-namespace:holbihome"
+             Shell.NavBarIsVisible="false">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,14 +16,51 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <controls:CardView CardTitle="Current Projects" CardDescription="None, enjoy the silence." CardIcon="{x:Static local:IconFont.CodeBranch}"
-                           Grid.Row="0" Grid.Column="0" ></controls:CardView>
+        <controls:CardView CardTitle="Current Projects" CardIcon="{x:Static local:IconFont.CodeBranch}"
+                           Grid.Row="0" Grid.Column="0" >
 
-        <controls:CardView CardTitle="Calendar" CardDescription="No upcoming events." CardIcon="{x:Static local:IconFont.Calendar}"
-                           Grid.Row="1" Grid.Column="0" ></controls:CardView>
+            <controls:CardView.CardContent>
+                <ContentView>
+                    <CollectionView>
+                        <CollectionView.EmptyView>
+                            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" >None, enjoy the silence.</Label>
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                </ContentView>
+            </controls:CardView.CardContent>
+
+        </controls:CardView>
+
+        <controls:CardView CardTitle="Calendar" CardIcon="{x:Static local:IconFont.Calendar}"
+                           Grid.Row="1" Grid.Column="0" >
+
+            <controls:CardView.CardContent>
+                <ContentView>
+                    <CollectionView>
+                        <CollectionView.EmptyView>
+                            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">No upcoming events.</Label>
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                </ContentView>
+            </controls:CardView.CardContent>
+
+
+        </controls:CardView>
 
         <controls:CardView CardTitle="Scores" CardDescription="No current scores." CardIcon="{x:Static local:IconFont.ChartBar}"
-                           Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"></controls:CardView>
+                           Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+
+            <controls:CardView.CardContent>
+                <ContentView>
+                    <CollectionView>
+                        <CollectionView.EmptyView>
+                            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">No recorded scores.</Label>
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                </ContentView>
+            </controls:CardView.CardContent>
+
+        </controls:CardView>
 
     </Grid>
 
