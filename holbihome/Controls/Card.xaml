@@ -5,8 +5,8 @@
              x:Class="holbihome.Controls.CardView"
              x:Name="Card"
              xmlns:local="clr-namespace:holbihome">
-    <Frame BindingContext="{x:Reference Card}" Margin="10" VerticalOptions="FillAndExpand">
-        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+    <Frame BindingContext="{x:Reference Card}" Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
             <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand" HeightRequest="25" Margin="20">
                 <Image>
@@ -19,7 +19,7 @@
                 <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding CardTitle}"></Label>
             </HorizontalStackLayout>
 
-            <ContentView Content="{Binding CardContent}">
+            <ContentView Content="{Binding CardContent}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 
             </ContentView>
 

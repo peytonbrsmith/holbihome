@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\fa_solid.ttf" />
+	  <None Remove="Resources\Images\appicon.svg" />
 	  <None Remove="Resources\Images\peyton.jpg" />
 	  <None Remove="Resources\Images\seahorse.png" />
 	  <None Remove="Controls\" />
@@ -85,10 +86,12 @@
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Pages\ProjectsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\CalendarView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Views\" />
 	  <Folder Include="PageModels\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Models\" />

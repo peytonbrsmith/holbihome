@@ -4,7 +4,9 @@
              x:Class="holbihome.MainPage"
              xmlns:controls="clr-namespace:holbihome.Controls"
              xmlns:local="clr-namespace:holbihome"
-             Shell.NavBarIsVisible="false">
+             xmlns:views="clr-namespace:holbihome.Views"
+             Shell.NavBarIsVisible="true"
+             >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -20,13 +22,14 @@
                            Grid.Row="0" Grid.Column="0" >
 
             <controls:CardView.CardContent>
-                <ContentView>
+                <!--<ContentView>
                     <CollectionView>
                         <CollectionView.EmptyView>
                             <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" >None, enjoy the silence.</Label>
                         </CollectionView.EmptyView>
                     </CollectionView>
-                </ContentView>
+                </ContentView>-->
+                <views:CalendarView></views:CalendarView>
             </controls:CardView.CardContent>
 
         </controls:CardView>
