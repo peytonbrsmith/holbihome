@@ -10,19 +10,33 @@
         <Border HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"
                             StrokeShape="RoundRectangle 500" Stroke="Transparent">
             <Image Source="seahorse.png" Aspect="AspectFit" Margin="25">
-                
+
             </Image>
         </Border>
     </Shell.FlyoutHeader>
 
     <Shell.TitleView>
-        <HorizontalStackLayout BackgroundColor="Transparent" WidthRequest="300" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-            <SearchBar Placeholder="Search" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <ImageButton Source="{StaticResource Profile}" Aspect="Center"
-                                  />
-            <ImageButton Source="{StaticResource Settings}" Aspect="Center"
-                                  />
-        </HorizontalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <SearchBar Grid.Column="1" Placeholder="Search" Background="Yellow"
+                       HeightRequest="100"  VerticalTextAlignment="Center"
+                       HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+
+            <HorizontalStackLayout Grid.Column="2" HorizontalOptions="End">
+
+                <ImageButton Source="{StaticResource Profile}" WidthRequest="75" HeightRequest="75" Aspect="Center" />
+                <ImageButton Source="{StaticResource Settings}" WidthRequest="75" HeightRequest="75" Aspect="Center" />
+
+            </HorizontalStackLayout>
+        </Grid>
     </Shell.TitleView>
 
     <Shell.ItemTemplate>
