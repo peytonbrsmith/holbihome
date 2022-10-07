@@ -22,14 +22,7 @@
                            Grid.Row="0" Grid.Column="0" >
 
             <controls:CardView.CardContent>
-                <!--<ContentView>
-                    <CollectionView>
-                        <CollectionView.EmptyView>
-                            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" >None, enjoy the silence.</Label>
-                        </CollectionView.EmptyView>
-                    </CollectionView>
-                </ContentView>-->
-                <views:CalendarView></views:CalendarView>
+                <views:CurrentProjectsView></views:CurrentProjectsView>
             </controls:CardView.CardContent>
 
         </controls:CardView>
@@ -38,13 +31,7 @@
                            Grid.Row="1" Grid.Column="0" >
 
             <controls:CardView.CardContent>
-                <ContentView>
-                    <CollectionView>
-                        <CollectionView.EmptyView>
-                            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">No upcoming events.</Label>
-                        </CollectionView.EmptyView>
-                    </CollectionView>
-                </ContentView>
+                <views:CalendarView></views:CalendarView>
             </controls:CardView.CardContent>
 
 
@@ -54,13 +41,7 @@
                            Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
 
             <controls:CardView.CardContent>
-                <ContentView>
-                    <CollectionView>
-                        <CollectionView.EmptyView>
-                            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">No recorded scores.</Label>
-                        </CollectionView.EmptyView>
-                    </CollectionView>
-                </ContentView>
+                <views:ScoresView></views:ScoresView>
             </controls:CardView.CardContent>
 
         </controls:CardView>

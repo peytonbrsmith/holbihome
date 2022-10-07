@@ -4,37 +4,52 @@
     x:Class="holbihome.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:holbihome">
+    xmlns:local="clr-namespace:holbihome"
+    >
 
     <Shell.FlyoutHeader>
-        <Border HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"
-                            StrokeShape="RoundRectangle 500" Stroke="Transparent">
-            <Image Source="seahorse.png" Aspect="AspectFit" Margin="25">
-
-            </Image>
+        <Border HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" StrokeShape="RoundRectangle 500" Stroke="Transparent">
+            <Image Source="seahorse.png" Aspect="AspectFit" Margin="25" />
         </Border>
     </Shell.FlyoutHeader>
 
     <Shell.TitleView>
-        <Grid>
+        <Grid Padding="5">
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <SearchBar Grid.Column="1" Placeholder="Search" Background="Yellow"
-                       HeightRequest="100"  VerticalTextAlignment="Center"
-                       HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+            <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start" Spacing="5" Padding="5,0,5,0">
 
-            <HorizontalStackLayout Grid.Column="2" HorizontalOptions="End">
+                <ImageButton Source="{StaticResource Alerts}" Aspect="Center" WidthRequest="50"/>
+                <ImageButton Source="{StaticResource Profile}" Aspect="Center" WidthRequest="50"/>
+                
+            </HorizontalStackLayout>
+            
+            <SearchBar Grid.Column="1" Placeholder="Search"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
 
-                <ImageButton Source="{StaticResource Profile}" WidthRequest="75" HeightRequest="75" Aspect="Center" />
-                <ImageButton Source="{StaticResource Settings}" WidthRequest="75" HeightRequest="75" Aspect="Center" />
+            <HorizontalStackLayout Grid.Column="2" HorizontalOptions="End" Spacing="5" Padding="5,0,5,0">
 
+                <ImageButton Source="{StaticResource Help}" Aspect="Center" WidthRequest="50" />
+                <ImageButton Source="{StaticResource Settings}" Aspect="Center" WidthRequest="50"/>
+                
+                <!--<HorizontalStackLayout Spacing="10">
+                    <Image Source="{StaticResource Sun}" Aspect="Center" />
+                    <Switch Margin="0">
+                        
+                    </Switch>
+                    <Image Source="{StaticResource Moon}" Aspect="Center" />
+                </HorizontalStackLayout>-->
+                
             </HorizontalStackLayout>
         </Grid>
     </Shell.TitleView>
@@ -42,7 +57,6 @@
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid HeightRequest="100" WidthRequest="100" Padding="10">
-
                 <Image Source="{Binding FlyoutIcon}" HeightRequest="100" Aspect="Center" Margin="{OnPlatform WinUI='-25,0,0,0'}"/>
                 <!--<VisualStateManager.VisualStateGroups>
                     <VisualStateGroupList>
@@ -75,6 +89,13 @@
             Route="dashboard" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Calendar" FlyoutIcon="{StaticResource Calendar}">
+        <ShellContent
+            Title="Calendar"
+            ContentTemplate="{DataTemplate local:CalendarPage}"
+            Route="calendar" />
+    </FlyoutItem>
+
     <FlyoutItem Title="Projects" FlyoutIcon="{StaticResource Projects}">
         <ShellContent
             Title="Projects"
@@ -89,29 +110,33 @@
             Route="concepts" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Account" FlyoutIcon="{StaticResource Profile}">
+    <FlyoutItem Title="Reports" FlyoutIcon="{StaticResource Scores}">
         <ShellContent
-            Title="Account"
-            ContentTemplate="{DataTemplate local:AccountPage}"
-            Route="projects" />
+            Title="Reports"
+            ContentTemplate="{DataTemplate local:ConceptsPage}"
+            Route="reports" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Settings" FlyoutIcon="{StaticResource Settings}">
+    <FlyoutItem Title="Connections" FlyoutIcon="{StaticResource Connections}">
         <ShellContent
-            Title="Account"
-            ContentTemplate="{DataTemplate local:SettingsPage}"
-            Route="concepts" />
+            Title="connections"
+            ContentTemplate="{DataTemplate local:ConceptsPage}"
+            Route="connections" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Peers" FlyoutIcon="{StaticResource Peers}">
+        <ShellContent
+            Title="Peers"
+            ContentTemplate="{DataTemplate local:ConceptsPage}"
+            Route="peers" />
     </FlyoutItem>
 
 
-    <!--<Shell.FlyoutFooter>
+    <Shell.FlyoutFooter>
         <VerticalStackLayout Spacing="10" >
-            <ImageButton Source="{StaticResource Profile}" HeightRequest="100" WidthRequest="100"  Aspect="Center"
-                                  />
-            <ImageButton Source="{StaticResource Settings}" HeightRequest="100" WidthRequest="100"  Aspect="Center"
-                                  />
+            
         </VerticalStackLayout>
-    </Shell.FlyoutFooter>-->
+    </Shell.FlyoutFooter>
 
 </Shell>
 

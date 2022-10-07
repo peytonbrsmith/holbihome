@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="holbihome.Views.CalendarView">
-    <VerticalStackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="holbihome.Views.CalendarView"
+             xmlns:local="clr-namespace:holbihome"
+             xmlns:viewModels="clr-namespace:holbihome.ViewModels"
+             >
+
+    <ContentView.BindingContext>
+        <viewModels:CalendarViewModel />
+    </ContentView.BindingContext>
+
+    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+
+        <CollectionView ItemsSource="{Binding Events}">
+            <CollectionView.EmptyView>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    No upcoming events.
+                </Label>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="{Binding Date}"/>
+                        <Label Text="{Binding Title}"/>
+                        <Label Text="{Binding Description}"/>
+                    </HorizontalStackLayout>
+                        
+          
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+
 </ContentView>

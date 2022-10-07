@@ -65,10 +65,17 @@
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
 	  <PackageReference Include="CommunityToolkit.Maui.Core" Version="1.3.0" />
 	  <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.1.1" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Controls\Card.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\CalendarPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ReportsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\SettingsPage.xaml">
@@ -86,6 +93,12 @@
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Pages\ProjectsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ScoresView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CurrentProjectsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\CalendarView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -93,13 +106,17 @@
 
 	<ItemGroup>
 	  <Folder Include="PageModels\" />
-	  <Folder Include="ViewModels\" />
-	  <Folder Include="Models\" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="Controls\Card.xaml.cs">
 	    <DependentUpon>Card.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\CalendarPage.xaml.cs">
+	    <DependentUpon>CalendarPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\ReportsPage.xaml.cs">
+	    <DependentUpon>ReportsPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\SettingsPage.xaml.cs">
 	    <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -109,6 +126,12 @@
 	  </Compile>
 	  <Compile Update="Pages\ConceptsPage.xaml.cs">
 	    <DependentUpon>ConceptsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ScoresView.xaml.cs">
+	    <DependentUpon>ScoresView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\CurrentProjectsView.xaml.cs">
+	    <DependentUpon>CurrentProjectsView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 </Project>

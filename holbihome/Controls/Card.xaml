@@ -5,24 +5,29 @@
              x:Class="holbihome.Controls.CardView"
              x:Name="Card"
              xmlns:local="clr-namespace:holbihome">
-    <Frame BindingContext="{x:Reference Card}" Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-
-            <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="25">
+    <Frame BindingContext="{x:Reference Card}" Margin="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <HorizontalStackLayout Grid.Row="0" Spacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                 <Image>
                     <Image.Source>
-                        <FontImageSource Glyph="{Binding CardIcon}" Color="{StaticResource Primary}" FontFamily="FontAwesome"
-               Size="22">
+                        <FontImageSource Glyph="{Binding CardIcon}" Color="{StaticResource Primary}" FontFamily="FontAwesome" Size="22">
                         </FontImageSource>
                     </Image.Source>
                 </Image>
                 <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding CardTitle}"></Label>
             </HorizontalStackLayout>
 
-            <ContentView Content="{Binding CardContent}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ContentView Grid.Row="1" Content="{Binding CardContent}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 
             </ContentView>
 
-        </VerticalStackLayout>
+        </Grid>
     </Frame>
 </ContentView>

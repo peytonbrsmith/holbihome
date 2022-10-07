@@ -15,11 +15,16 @@
                Size="22"
                Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.CodeBranch}"/>
-    <FontImage x:Key="Concepts"
+    <FontImage x:Key="Reports"
                FontFamily="FontAwesome"
                Size="22"
                Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.FileArchive}"/>
+    <FontImage x:Key="Concepts"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Gray200}"
+               Glyph="{x:Static local:IconFont.BookReader}"/>
     <FontImage x:Key="IconFour"
                FontFamily="FontAwesome"
                Size="22"
@@ -30,6 +35,11 @@
                Size="22"
                Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.Cogs}"/>
+    <FontImage x:Key="Alerts"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Gray200}"
+               Glyph="{x:Static local:IconFont.Bell}"/>
     <FontImage x:Key="Profile"
                FontFamily="FontAwesome"
                Size="22"
@@ -50,6 +60,31 @@
                Size="22"
                Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.Folder}"/>
+    <FontImage x:Key="Sun"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Gray200}"
+               Glyph="{x:Static local:IconFont.Sun}"/>
+    <FontImage x:Key="Moon"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Gray200}"
+               Glyph="{x:Static local:IconFont.Moon}"/>
+    <FontImage x:Key="Connections"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Gray200}"
+               Glyph="{x:Static local:IconFont.Server}"/>
+    <FontImage x:Key="Peers"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Gray200}"
+               Glyph="{x:Static local:IconFont.AddressBook}"/>
+    <FontImage x:Key="Help"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Gray200}"
+               Glyph="{x:Static local:IconFont.InfoCircle}"/>
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
@@ -176,13 +211,13 @@
     <Style TargetType="ImageButton">
         
         <Setter Property="Opacity" Value="1" />
-        <Setter Property="BorderColor" Value="Transparent"/>
-        <Setter Property="BorderWidth" Value="0"/>
-        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}"/>
+        <Setter Property="BorderWidth" Value="2"/>
+        <Setter Property="CornerRadius" Value="8"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" >
+                    <VisualState x:Name="Normal">
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor"
                                     Value="Transparent" />
@@ -204,8 +239,8 @@
         </Setter>
         <Style.Triggers>
             <Trigger TargetType="ImageButton"
-                                     Property="ImageButton.IsPressed"
-                                     Value="True">
+                     Property="ImageButton.IsPressed"
+                     Value="True">
                 <Setter Property="BackgroundColor"
                                         Value="{StaticResource Primary}" />
                 <!-- Multiple Setter elements are allowed -->
@@ -452,7 +487,7 @@
     </Style>
 
     <Style TargetType="ContentPage">
-        <Setter Property="Shell.NavBarIsVisible" Value="False" />
+        <Setter Property="Shell.NavBarIsVisible" Value="True" />
     </Style>
 
     <Style TargetType="TabbedPage">

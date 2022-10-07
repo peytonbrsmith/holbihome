@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="holbihome.ProjectsPage"
              xmlns:controls="clr-namespace:holbihome.Controls"
-             xmlns:local="clr-namespace:holbihome"
-             Shell.NavBarIsVisible="false">
+             xmlns:local="clr-namespace:holbihome">
 
     <Grid>
         <Grid.RowDefinitions>
