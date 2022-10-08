@@ -5,6 +5,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:holbihome"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     >
 
     <Shell.FlyoutHeader>
@@ -28,8 +29,8 @@
 
             <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start" Spacing="5" Padding="5,0,5,0">
 
-                <ImageButton Source="{StaticResource Alerts}" Aspect="Center" WidthRequest="50"/>
                 <ImageButton Source="{StaticResource Profile}" Aspect="Center" WidthRequest="50"/>
+                <ImageButton Source="{StaticResource Alerts}" Aspect="Center" WidthRequest="50"/>
                 
             </HorizontalStackLayout>
             

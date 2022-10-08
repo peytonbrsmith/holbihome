@@ -93,6 +93,9 @@
 	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="Pages\ProjectsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\CampusCornerView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ScoresView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -126,6 +129,9 @@
 	  </Compile>
 	  <Compile Update="Pages\ConceptsPage.xaml.cs">
 	    <DependentUpon>ConceptsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\CampusCornerView.xaml.cs">
+	    <DependentUpon>CampusCornerView.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\ScoresView.xaml.cs">
 	    <DependentUpon>ScoresView.xaml</DependentUpon>

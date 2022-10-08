@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="holbihome.Views.CampusCornerView"
+             xmlns:local="clr-namespace:holbihome"
+             xmlns:viewModels="clr-namespace:holbihome.ViewModels"
+             >
+
+    <ContentView.BindingContext>
+        <viewModels:CalendarViewModel />
+    </ContentView.BindingContext>
+
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+
+        <CarouselView ItemsSource="{Binding Events}">
+            <CarouselView.EmptyView>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    No upcoming events.
+                </Label>
+            </CarouselView.EmptyView>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="{Binding Title}"/>
+                        <Label Text="{Binding Description}"/>
+                    </HorizontalStackLayout>
+                        
+          
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </VerticalStackLayout>
+
+</ContentView>

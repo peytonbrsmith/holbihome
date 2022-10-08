@@ -85,6 +85,11 @@
                Size="22"
                Color="{StaticResource Gray200}"
                Glyph="{x:Static local:IconFont.InfoCircle}"/>
+    <FontImage x:Key="QA"
+               FontFamily="FontAwesome"
+               Size="22"
+               Color="{StaticResource Gray200}"
+               Glyph="{x:Static local:IconFont.CheckCircle}"/>
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
