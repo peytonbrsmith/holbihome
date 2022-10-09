@@ -12,7 +12,7 @@
         <ResourceDictionary>
             <DataTemplate x:Key="Review">
                 <Frame HeightRequest="75" CornerRadius="8" HorizontalOptions="FillAndExpand"
-                       BackgroundColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray950}}">
+                       BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray950}}">
                     <Grid HorizontalOptions="FillAndExpand">
                         <Image WidthRequest="100">
                             <Image.Source>
