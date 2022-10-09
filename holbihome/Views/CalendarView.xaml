@@ -8,10 +8,10 @@
     <ContentView.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="Day">
-                <HorizontalStackLayout Spacing="2" HorizontalOptions="Center" Margin="0" Padding="0">
-                    <Label Text="{Binding Title}" HorizontalTextAlignment="Center" FontSize="12" />
-                    <Label Text=" -  " HorizontalTextAlignment="Center" FontSize="12" />
-                    <Label Text="{Binding Description}" HorizontalTextAlignment="Center" FontSize="12" />
+                <HorizontalStackLayout Spacing="2" HorizontalOptions="FillAndExpand" Margin="0" Padding="0">
+                    <Label Text="{Binding Title}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="14" />
+                    <Label Text=" -  " HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="14" />
+                    <Label Text="{Binding Description}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="14" />
                 </HorizontalStackLayout>
             </DataTemplate>
         </ResourceDictionary>
@@ -21,66 +21,98 @@
         <viewModels:CalendarViewModel />
     </ContentView.BindingContext>
 
-    <ScrollView Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
-        <HorizontalStackLayout Spacing="50" VerticalOptions="Center">
-            
-            <CollectionView ItemsSource="{Binding Events}" ItemTemplate="{StaticResource Day}">
-                <CollectionView.Header>
-                    <Label FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center">
-                        M
-                    </Label>
-                </CollectionView.Header>
-                <CollectionView.EmptyView>
-                    <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        Nothing.
-                    </Label>
-                </CollectionView.EmptyView>
-            </CollectionView>
-            <CollectionView ItemsSource="{Binding Events2}" ItemTemplate="{StaticResource Day}">
-                <CollectionView.Header>
-                    <Label FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center">
-                        T
-                    </Label>
-                </CollectionView.Header>
-                <CollectionView.EmptyView>
-                    <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        Nothing.
-                    </Label>
-                </CollectionView.EmptyView>
-            </CollectionView>
-            <CollectionView ItemsSource="{Binding Events3}" ItemTemplate="{StaticResource Day}">
-                <CollectionView.Header>
-                    <Label FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center">
-                        W
-                    </Label>
-                </CollectionView.Header>
-            </CollectionView>
-            <CollectionView ItemsSource="{Binding Events4}" ItemTemplate="{StaticResource Day}">
-                <CollectionView.Header>
-                    <Label FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center">
-                        T
-                    </Label>
-                </CollectionView.Header>
-                <CollectionView.EmptyView>
-                    <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        Nothing.
-                    </Label>
-                </CollectionView.EmptyView>
-            </CollectionView>
-            <CollectionView ItemsSource="{Binding Events5}" ItemTemplate="{StaticResource Day}">
-                <CollectionView.Header>
-                    <Label FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center">
-                        F
-                    </Label>
-                </CollectionView.Header>
-                <CollectionView.EmptyView>
-                    <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        Nothing.
-                    </Label>
-                </CollectionView.EmptyView>
-            </CollectionView>
-            
-        </HorizontalStackLayout>
-    </ScrollView>
+
+    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <CollectionView Grid.Column="0" ItemsSource="{Binding Events}" ItemTemplate="{StaticResource Day}" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+            <CollectionView.Header >
+                <Label FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" Text="Sunday" HorizontalTextAlignment="Center" />
+            </CollectionView.Header>
+            <CollectionView.EmptyView>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    Nothing.
+                </Label>
+            </CollectionView.EmptyView>
+        </CollectionView>
+        <CollectionView Grid.Column="1" ItemsSource="{Binding Events}" ItemTemplate="{StaticResource Day}" VerticalOptions="FillAndExpand" >
+            <CollectionView.Header>
+                <Label FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" Text="Monday" HorizontalTextAlignment="Center">
+                    
+                </Label>
+            </CollectionView.Header>
+            <CollectionView.EmptyView>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    Nothing.
+                </Label>
+            </CollectionView.EmptyView>
+        </CollectionView>
+        <CollectionView Grid.Column="2" ItemsSource="{Binding Events2}" ItemTemplate="{StaticResource Day}" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+            <CollectionView.Header>
+                <Label FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" Text="Tuesday" HorizontalTextAlignment="Center">
+                    
+                </Label>
+            </CollectionView.Header>
+            <CollectionView.EmptyView>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    Nothing.
+                </Label>
+            </CollectionView.EmptyView>
+        </CollectionView>
+        <CollectionView Grid.Column="3" ItemsSource="{Binding Events3}" ItemTemplate="{StaticResource Day}" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+            <CollectionView.Header>
+                <Label FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" Text="Wednesday" HorizontalTextAlignment="Center">
+                    
+                </Label>
+            </CollectionView.Header>
+        </CollectionView>
+        <CollectionView Grid.Column="4" ItemsSource="{Binding Events4}" ItemTemplate="{StaticResource Day}" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+            <CollectionView.Header>
+                <Label FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" Text="Thursday" HorizontalTextAlignment="Center">
+                    
+                </Label>
+            </CollectionView.Header>
+            <CollectionView.EmptyView>
+                <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    Nothing.
+                </Label>
+            </CollectionView.EmptyView>
+        </CollectionView>
+        <CollectionView Grid.Column="5" ItemsSource="{Binding Events5}" ItemTemplate="{StaticResource Day}" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+            <CollectionView.Header>
+                <Label FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" Text="Friday" HorizontalTextAlignment="Center">
+                    
+                </Label>
+            </CollectionView.Header>
+            <CollectionView.EmptyView>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    Nothing.
+                </Label>
+            </CollectionView.EmptyView>
+        </CollectionView>
+        <CollectionView Grid.Column="6" ItemsSource="{Binding Events5}" ItemTemplate="{StaticResource Day}" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+            <CollectionView.Header>
+                <Label FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" Text="Saturday" HorizontalTextAlignment="Center">
+                    
+                </Label>
+            </CollectionView.Header>
+            <CollectionView.EmptyView>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    Nothing.
+                </Label>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </Grid>
+
 
 </ContentView>

@@ -7,9 +7,13 @@ using System.Collections.ObjectModel;
 
 namespace holbihome.Models
 {
-    internal class Score
+    public class Score
     {
-        public string TrackTitle { get; set; }
-        public string Grade { get; set; }
+        public string Title { get; set; }
+        public string Trimester1 { get; set; }
+        public string Trimester2 { get; set; }
+        public string Trimester3 { get; set; }
+        public string Trimester4 { get; set; }
+        public string Trimester5 { get; set; }
     }
 }

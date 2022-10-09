@@ -39,11 +39,11 @@
 
         </controls:CardView>
 
-        <controls:CardView Grid.Row="1" Grid.Column="2" Grid.RowSpan="1"  CardTitle="Peer Support" CardIcon="{x:Static local:IconFont.PeopleCarry}"
+        <controls:CardView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"  CardTitle="Peer Support" CardIcon="{x:Static local:IconFont.PeopleCarry}"
                                 HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 
             <controls:CardView.CardContent>
-                <views:CurrentProjectsView></views:CurrentProjectsView>
+                <views:PeerSupportView></views:PeerSupportView>
             </controls:CardView.CardContent>
 
         </controls:CardView>

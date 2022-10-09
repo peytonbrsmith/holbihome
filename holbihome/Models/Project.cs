@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace holbihome.Models
 {
-    internal class Project
+    public class Project
     {
         public string TrackName { get; set; }
         public int TrackId { get; set; }
@@ -14,5 +14,6 @@ namespace holbihome.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public string DueDate { get; set; }
+        public string ProjectGlyph { get; set; }
     }
 }

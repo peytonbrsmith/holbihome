@@ -96,6 +96,9 @@
 	  <MauiXaml Update="Views\CampusCornerView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PeerSupportView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ScoresView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -132,6 +135,9 @@
 	  </Compile>
 	  <Compile Update="Views\CampusCornerView.xaml.cs">
 	    <DependentUpon>CampusCornerView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\PeerSupportView.xaml.cs">
+	    <DependentUpon>PeerSupportView.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\ScoresView.xaml.cs">
 	    <DependentUpon>ScoresView.xaml</DependentUpon>

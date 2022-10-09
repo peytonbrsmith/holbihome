@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="holbihome.Views.PeerSupportView"
+             xmlns:viewModels="clr-namespace:holbihome.ViewModels">
+
+    <ContentView.BindingContext>
+        <viewModels:PeerSupportViewModel />
+    </ContentView.BindingContext>
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="Review">
+                <Frame HeightRequest="75" CornerRadius="8" HorizontalOptions="FillAndExpand"
+                       BackgroundColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray950}}">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Image WidthRequest="100">
+                            <Image.Source>
+                                <FontImageSource Glyph="{Binding ProjectGlyph}" Color="{StaticResource Primary}" FontFamily="FontAwesome"/>
+                            </Image.Source>
+                        </Image>
+                        <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="{Binding StudentName}" FontSize="14"/>
+                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="12"/>
+                        </VerticalStackLayout>
+                        <Button HorizontalOptions="End" 
+                                Text="Review" BackgroundColor="{StaticResource Primary}" 
+                                TextColor="White" Margin="0" HeightRequest="40" Padding="10" />
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollView Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+            <CollectionView ItemTemplate="{StaticResource Review}" ItemsSource="{Binding Reviews}" HorizontalOptions="FillAndExpand" SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.EmptyView>
+                    <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        None, enjoy the silence.
+                    </Label>
+                </CollectionView.EmptyView>
+            </CollectionView>
+
+        </ScrollView>
+    </Grid>
+
+</ContentView>

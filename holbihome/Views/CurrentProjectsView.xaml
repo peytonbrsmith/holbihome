@@ -1,38 +1,71 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="holbihome.Views.CurrentProjectsView">
+             x:Class="holbihome.Views.CurrentProjectsView"
+             xmlns:viewModels="clr-namespace:holbihome.ViewModels">
 
-    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <ScrollView Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <ContentView.BindingContext>
+        <viewModels:CurrentProjectsViewModel />
+    </ContentView.BindingContext>
 
-            <CollectionView>
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="Project">
+                <Frame HeightRequest="100" CornerRadius="8" HorizontalOptions="FillAndExpand"
+                       BackgroundColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray950}}">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Image WidthRequest="100">
+                            <Image.Source>
+                                <FontImageSource Glyph="{Binding ProjectGlyph}" Color="{StaticResource Primary}" FontFamily="FontAwesome"/>
+                            </Image.Source>
+                        </Image>
+                        <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="{Binding Title}" FontSize="14"/>
+                            <Label Text="{Binding DueDate}" FontAttributes="Bold" FontSize="12"/>
+                        </VerticalStackLayout>
+                        <Button HorizontalOptions="End"
+                                HeightRequest="30" WidthRequest="50" 
+                                Text="{Binding Id}" BackgroundColor="{StaticResource Primary}" 
+                                TextColor="White" Margin="0" Padding="0" />
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <FlexLayout Direction="Column" AlignContent="SpaceEvenly" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="25">
+
+        <ScrollView Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+
+            <CollectionView ItemTemplate="{StaticResource Project}" ItemsSource="{Binding Projects}" HorizontalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="2" />
+                </CollectionView.ItemsLayout>
                 <CollectionView.EmptyView>
                     <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                         None, enjoy the silence.
                     </Label>
                 </CollectionView.EmptyView>
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical"></LinearItemsLayout>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="50">
-                            <FlexLayout AlignContent="SpaceEvenly">
-                                <Label Text="{Binding Title}"/>
-                            </FlexLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
             </CollectionView>
 
         </ScrollView>
-    </Grid>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Padding="25" >Completed</Label>
+
+        <ScrollView Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+
+            <CollectionView ItemTemplate="{StaticResource Project}" ItemsSource="{Binding Finished}" HorizontalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.EmptyView>
+                    <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        None, enjoy the silence.
+                    </Label>
+                </CollectionView.EmptyView>
+            </CollectionView>
+
+        </ScrollView>
+    </FlexLayout>
 
 </ContentView>
